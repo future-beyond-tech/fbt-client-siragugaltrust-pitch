@@ -748,6 +748,380 @@ section { padding: 120px 40px; position: relative; }
   line-height: 1.55;
 }
 
+/* ============= DONOR EXPERIENCE & BILLING AUTOMATION ============= */
+.donor {
+  background: var(--cream);
+  border-top: 1px solid rgba(14, 19, 22, 0.08);
+}
+
+.donor-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+@media (max-width: 900px) {
+  .donor-pillars { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.donor-card {
+  padding: 36px 32px;
+  background: var(--parchment);
+  border: 1px solid rgba(14, 19, 22, 0.08);
+  border-left: 4px solid;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.donor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-warm);
+}
+.donor-card.accent-teal  { border-left-color: var(--teal-bright); }
+.donor-card.accent-terra { border-left-color: var(--terracotta); }
+.donor-card.accent-gold  { border-left-color: var(--gold); }
+
+.donor-card-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.donor-card.accent-teal  .donor-card-num { color: var(--teal-bright); }
+.donor-card.accent-terra .donor-card-num { color: var(--terracotta); }
+.donor-card.accent-gold  .donor-card-num { color: var(--gold); }
+
+.donor-card-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  color: var(--ink);
+}
+.donor-card-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.donor-list { list-style: none; }
+.donor-list li {
+  padding: 12px 0 12px 22px;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(14, 19, 22, 0.08);
+}
+.donor-list li:last-child { border-bottom: none; }
+.donor-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--mono);
+  font-weight: 700;
+}
+.donor-card.accent-teal  .donor-list li::before { color: var(--teal-bright); }
+.donor-card.accent-terra .donor-list li::before { color: var(--terracotta); }
+.donor-card.accent-gold  .donor-list li::before { color: var(--gold); }
+.donor-list li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: var(--sans);
+  color: var(--ink);
+}
+.donor-list li span {
+  opacity: 0.7;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+/* before / after dark panel */
+.before-after {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 48px 40px;
+  margin-bottom: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.before-after::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(200, 80, 26, 0.12), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(45, 139, 139, 0.12), transparent 50%);
+  pointer-events: none;
+}
+.ba-header {
+  position: relative;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ba-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(232, 222, 207, 0.2);
+}
+.ba-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+}
+@media (max-width: 700px) {
+  .ba-grid { grid-template-columns: 1fr; }
+}
+.ba-col { position: relative; }
+.ba-col + .ba-col {
+  border-left: 1px solid rgba(232, 222, 207, 0.15);
+}
+@media (max-width: 700px) {
+  .ba-col + .ba-col {
+    border-left: none;
+    border-top: 1px solid rgba(232, 222, 207, 0.15);
+  }
+}
+.ba-col-header {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ba-col.manual { background: rgba(200, 80, 26, 0.06); }
+.ba-col.auto   { background: rgba(45, 139, 139, 0.06); }
+.ba-col.manual .ba-col-header { color: var(--terracotta); }
+.ba-col.auto   .ba-col-header { color: var(--teal-bright); }
+.ba-col-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-style: normal;
+}
+.ba-col.manual .ba-col-tag { background: var(--terracotta); color: var(--cream); }
+.ba-col.auto   .ba-col-tag { background: var(--teal-bright); color: var(--cream); }
+
+.ba-list { list-style: none; }
+.ba-row {
+  display: flex;
+  gap: 14px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.1);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.55;
+  align-items: flex-start;
+}
+.ba-row:last-child { border-bottom: none; }
+.ba-row-num {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding-top: 1px;
+  min-width: 32px;
+}
+.ba-col.manual .ba-row-num { color: var(--terracotta); }
+.ba-col.auto   .ba-row-num { color: var(--teal-bright); }
+.ba-row-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+.ba-col.manual .ba-row-text { opacity: 0.85; }
+
+.ba-summary {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 350;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 780px;
+  margin: 56px auto 80px;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.ba-summary em {
+  font-style: normal;
+  color: var(--terracotta-deep);
+  font-weight: 500;
+}
+
+/* donor journey */
+.donor-journey {
+  margin-bottom: 64px;
+}
+.journey-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.journey-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(14, 19, 22, 0.15);
+}
+.journey-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 36px;
+  margin-bottom: 24px;
+}
+@media (max-width: 700px) {
+  .journey-flow { grid-template-columns: 1fr; gap: 28px; }
+}
+.journey-step {
+  position: relative;
+  padding: 22px 22px;
+  background: var(--parchment);
+  border: 1px solid rgba(14, 19, 22, 0.1);
+  border-left: 3px solid var(--terracotta);
+}
+.journey-step-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--terracotta);
+  margin-bottom: 6px;
+}
+.journey-step-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 4px;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.journey-step-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.7;
+  font-family: var(--mono);
+}
+.journey-step::after {
+  content: '→';
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--terracotta);
+  font-weight: 700;
+  z-index: 1;
+}
+.journey-step.row-end::after {
+  content: '↓';
+  right: 50%;
+  top: auto;
+  bottom: -28px;
+  transform: translateX(50%);
+  font-size: 20px;
+}
+.journey-step.last-step::after { content: ''; display: none; }
+@media (max-width: 700px) {
+  .journey-step::after,
+  .journey-step.row-end::after {
+    content: '↓';
+    right: 50%;
+    top: auto;
+    bottom: -22px;
+    transform: translateX(50%);
+    font-size: 18px;
+  }
+  .journey-step.last-step::after { display: none; }
+}
+
+.journey-footer {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 24px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 2px;
+}
+.journey-footer .jf-divider {
+  color: var(--gold);
+  margin: 0 14px;
+  opacity: 0.6;
+}
+.journey-footer strong {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  .journey-footer {
+    font-size: 11px;
+    padding: 16px 18px;
+    line-height: 1.7;
+  }
+  .journey-footer .jf-divider { display: block; margin: 4px 0; }
+}
+
+/* closing quote */
+.donor-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 350;
+  text-align: center;
+  opacity: 0.85;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.45;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+
+@media (max-width: 768px) {
+  .before-after { padding: 32px 22px; }
+  .ba-row { padding: 12px 18px; font-size: 12px; }
+  .ba-col-header { padding: 16px 18px; font-size: 18px; }
+  .donor-card { padding: 28px 22px; }
+  .ba-summary { font-size: 20px; margin: 40px auto 56px; }
+  .donor-quote { font-size: 20px; }
+  .journey-step { padding: 18px 18px; }
+}
+
 /* ============= TECH STACK ============= */
 .tech {
   background: var(--parchment);
@@ -786,6 +1160,185 @@ section { padding: 120px 40px; position: relative; }
   line-height: 1.5;
   opacity: 0.75;
   font-family: var(--mono);
+}
+
+/* ============= SEO / GEO / AEO (DARK) ============= */
+.seo {
+  background: var(--ink-soft);
+  color: var(--cream);
+  border-top: 1px solid rgba(232, 222, 207, 0.1);
+}
+.seo .section-label { color: var(--gold); }
+.seo .section-title { color: var(--cream); }
+.seo .section-title em { color: var(--gold-bright); }
+.seo .section-intro { opacity: 0.78; color: var(--cream); }
+
+.seo-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+  margin-bottom: 64px;
+}
+@media (max-width: 900px) {
+  .seo-pillars { grid-template-columns: 1fr; }
+}
+.seo-pillar {
+  padding: 40px 32px;
+  border-right: 1px solid rgba(232, 222, 207, 0.15);
+  border-left: 4px solid;
+  background: rgba(232, 222, 207, 0.02);
+  position: relative;
+}
+.seo-pillar:last-child { border-right: none; }
+@media (max-width: 900px) {
+  .seo-pillar {
+    border-right: none;
+    border-bottom: 1px solid rgba(232, 222, 207, 0.15);
+  }
+  .seo-pillar:last-child { border-bottom: none; }
+}
+.pillar-seo  { border-left-color: var(--teal-bright); }
+.pillar-geo  { border-left-color: var(--terracotta); }
+.pillar-aeo  { border-left-color: var(--gold); }
+
+.pillar-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.pillar-seo .pillar-num { color: var(--teal-bright); }
+.pillar-geo .pillar-num { color: var(--terracotta); }
+.pillar-aeo .pillar-num { color: var(--gold); }
+
+.pillar-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 4px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.pillar-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.pillar-thesis {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.88;
+  line-height: 1.5;
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed rgba(232, 222, 207, 0.2);
+}
+
+.pillar-list { list-style: none; }
+.pillar-list li {
+  padding: 10px 0 10px 22px;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.06);
+}
+.pillar-list li:last-child { border-bottom: none; }
+.pillar-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: var(--mono);
+  font-weight: 700;
+}
+.pillar-seo .pillar-list li::before { color: var(--teal-bright); }
+.pillar-geo .pillar-list li::before { color: var(--terracotta); }
+.pillar-aeo .pillar-list li::before { color: var(--gold); }
+.pillar-list li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: var(--sans);
+}
+.pillar-list li span {
+  opacity: 0.65;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+.seo-metrics {
+  background: #0A0E10;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+  border-radius: 4px;
+  padding: 32px;
+  font-family: var(--mono);
+  font-size: 12px;
+  position: relative;
+  margin-bottom: 64px;
+}
+.seo-metrics-label {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: var(--ink-soft);
+  padding: 0 12px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.seo-metrics-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.1);
+  gap: 16px;
+}
+.seo-metrics-row:last-of-type { border-bottom: none; }
+.seo-metrics-key { opacity: 0.7; }
+.seo-metrics-val {
+  font-weight: 700;
+  color: var(--gold-bright);
+  white-space: nowrap;
+  text-align: right;
+}
+.seo-disclaimer {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  opacity: 0.6;
+  line-height: 1.55;
+}
+
+.seo-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 350;
+  text-align: center;
+  opacity: 0.85;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.45;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+
+@media (max-width: 768px) {
+  .seo-pillar { padding: 32px 22px; }
+  .seo-metrics { padding: 24px 18px; }
+  .seo-metrics-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .seo-metrics-val { text-align: left; white-space: normal; }
+  .seo-quote { font-size: 20px; }
 }
 
 /* ============= TIMELINE ============= */
@@ -1082,6 +1635,8 @@ section { padding: 120px 40px; position: relative; }
     <a href="#bench">Benchmark</a>
     <a href="#build">V2 Roadmap</a>
     <a href="#transparency">Transparency</a>
+    <a href="#donor-experience">Donor UX</a>
+    <a href="#seo">Discoverability</a>
     <a href="#timeline">Timeline</a>
   </div>
   <a href="#invest" class="nav-cta">Continue →</a>
@@ -1592,10 +2147,162 @@ section { padding: 120px 40px; position: relative; }
   </div>
 </section>
 
+<!-- ============= DONOR EXPERIENCE & BILLING AUTOMATION ============= -->
+<section id="donor-experience" class="donor">
+  <div class="container">
+    <div class="section-label reveal">05 — Donor Experience</div>
+    <h2 class="section-title reveal">Donate the way you want. Once. Monthly. Or <em>sponsor a life.</em></h2>
+    <p class="section-intro reveal">
+      Today, the Siragugal team chases monthly donations on WhatsApp, types receipts by hand,
+      reconciles bank statements in Excel, and writes year-end statements in Google Docs.
+      V2 ends all of that — and gives donors three new ways to give that the current site
+      can't even ask for.
+    </p>
+
+    <div class="donor-pillars">
+      <article class="donor-card accent-teal reveal">
+        <div class="donor-card-num">PILLAR · 01</div>
+        <h3 class="donor-card-title">Give the way that fits</h3>
+        <h4 class="donor-card-sub">Five flexible patterns · one branded checkout</h4>
+        <ul class="donor-list">
+          <li><strong>One-time donation</strong><span>UPI · cards · netbanking · wallets · 30-second flow</span></li>
+          <li><strong>Monthly recurring</strong><span>Razorpay subscription · auto-debit · pause anytime</span></li>
+          <li><strong>Annual giving</strong><span>Single payment · marked for tax year · auto 80G</span></li>
+          <li><strong>Pay-by-intent tiers</strong><span>"₹500 = school supplies for a child" · impact card before checkout</span></li>
+          <li><strong>Micro-tip option</strong><span>Round-up donations · ₹100 / ₹250 / ₹500 quick buttons</span></li>
+          <li><strong>NRI giving (Phase 2)</strong><span>Stripe rail for USD · GBP · AED · SGD donations</span></li>
+          <li><strong>Branded checkout</strong><span>Never leaves the siragugaltrust domain</span></li>
+        </ul>
+      </article>
+
+      <article class="donor-card accent-terra reveal reveal-delay-1">
+        <div class="donor-card-num">PILLAR · 02</div>
+        <h3 class="donor-card-title">The end of manual billing</h3>
+        <h4 class="donor-card-sub">Webhooks · mandates · auto-receipts · zero ops work</h4>
+        <ul class="donor-list">
+          <li><strong>Razorpay eMandate / NACH</strong><span>Donor authorises once · charged forever (until they pause)</span></li>
+          <li><strong>Pre-charge reminders</strong><span>SMS + WhatsApp + email · 3 days before debit</span></li>
+          <li><strong>Webhook-driven recording</strong><span>Every payment auto-logged to DB in real time</span></li>
+          <li><strong>Auto 80G receipt PDF</strong><span>Generated at success · emailed · stored in donor portal</span></li>
+          <li><strong>Failed-payment dunning</strong><span>Smart 3-retry schedule before gentle pause</span></li>
+          <li><strong>Auto-resume on card update</strong><span>Donor updates card · recurring resumes silently</span></li>
+          <li><strong>Daily reconciliation</strong><span>Bank statement ↔ donations auto-matched · CSV export</span></li>
+          <li><strong>Annual giving statement</strong><span>Auto-generated and emailed every March</span></li>
+          <li><strong>Refund flow</strong><span>Admin-triggered · fully audited · edge case but supported</span></li>
+        </ul>
+      </article>
+
+      <article class="donor-card accent-gold reveal reveal-delay-2">
+        <div class="donor-card-num">PILLAR · 03</div>
+        <h3 class="donor-card-title">Adopt a Wing</h3>
+        <h4 class="donor-card-sub">Take responsibility for one life — and watch it grow</h4>
+        <ul class="donor-list">
+          <li><strong>Adopt a Scholar</strong><span>Sponsor one CIT / Annamalai student through their full engineering degree</span></li>
+          <li><strong>Adopt a Class</strong><span>Sponsor an entire grade at the Manamadurai dropout school for a year</span></li>
+          <li><strong>Adopt a Festival</strong><span>Fund a complete Siragugal Diwali or Pongal at Sharanalayam</span></li>
+          <li><strong>Sponsor visibility</strong><span>Monthly progress photos · beneficiary updates (with consent) · annual report card</span></li>
+          <li><strong>Private sponsor portal</strong><span>See your student's progress · message the team · upload your own letters</span></li>
+          <li><strong>Tax-optimised</strong><span>Full 80G coverage · annual statement consolidates all sponsor commitments</span></li>
+          <li><strong>Annual sponsor meet</strong><span>Invite-only · in-person at trust HQ · or virtual</span></li>
+          <li><strong>Pause-friendly</strong><span>Life happens · pause for a quarter without judgement · resume when ready</span></li>
+          <li><strong>Pricing</strong><span>[Adopt a Scholar pricing finalised with trustees]</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="before-after reveal">
+      <div class="ba-header">The trust's daily ops · Before / After V2</div>
+      <div class="ba-grid">
+        <div class="ba-col manual">
+          <div class="ba-col-header">
+            <span>Manual today</span>
+            <span class="ba-col-tag">BEFORE</span>
+          </div>
+          <ol class="ba-list">
+            <li class="ba-row"><span class="ba-row-num">01 →</span><span class="ba-row-text">Trustees note each Razorpay payment in a spreadsheet</span></li>
+            <li class="ba-row"><span class="ba-row-num">02 →</span><span class="ba-row-text">WhatsApp the donor every month asking for the next payment</span></li>
+            <li class="ba-row"><span class="ba-row-num">03 →</span><span class="ba-row-text">Type 80G receipts manually in Google Docs</span></li>
+            <li class="ba-row"><span class="ba-row-num">04 →</span><span class="ba-row-text">Reconcile bank statement against donations in Excel</span></li>
+            <li class="ba-row"><span class="ba-row-num">05 →</span><span class="ba-row-text">Donor history scattered across screenshots and chats</span></li>
+            <li class="ba-row"><span class="ba-row-num">06 →</span><span class="ba-row-text">Annual statements written by hand in March</span></li>
+            <li class="ba-row"><span class="ba-row-num">07 →</span><span class="ba-row-text">A failed UPI = silent lost donation, no follow-up</span></li>
+          </ol>
+        </div>
+        <div class="ba-col auto">
+          <div class="ba-col-header">
+            <span>Automated tomorrow</span>
+            <span class="ba-col-tag">AFTER V2</span>
+          </div>
+          <ol class="ba-list">
+            <li class="ba-row"><span class="ba-row-num">01 →</span><span class="ba-row-text">Webhook auto-records every payment to the DB in real time</span></li>
+            <li class="ba-row"><span class="ba-row-num">02 →</span><span class="ba-row-text">eMandate auto-debits monthly · 3-day reminder before charge</span></li>
+            <li class="ba-row"><span class="ba-row-num">03 →</span><span class="ba-row-text">80G PDF auto-generated and emailed in seconds</span></li>
+            <li class="ba-row"><span class="ba-row-num">04 →</span><span class="ba-row-text">Daily auto-reconciliation · admin gets a one-click CSV</span></li>
+            <li class="ba-row"><span class="ba-row-num">05 →</span><span class="ba-row-text">Donor portal shows the full giving history at any time</span></li>
+            <li class="ba-row"><span class="ba-row-num">06 →</span><span class="ba-row-text">March statement auto-generated · emailed · in donor portal</span></li>
+            <li class="ba-row"><span class="ba-row-num">07 →</span><span class="ba-row-text">3-retry smart dunning schedule + auto-resume on card update</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <p class="ba-summary reveal">
+      Conservatively: <em>8–12 hours of trustee time saved every month.</em><br>
+      That's a full working day, every month, returned to the cause.
+    </p>
+
+    <div class="donor-journey reveal">
+      <div class="journey-label">After the click · the auto-pilot kicks in</div>
+      <div class="journey-flow">
+        <div class="journey-step">
+          <div class="journey-step-num">STEP · 01</div>
+          <div class="journey-step-title">Click</div>
+          <div class="journey-step-desc">Donor taps Donate on any page · UPI / card / wallet</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">STEP · 02</div>
+          <div class="journey-step-title">Pay</div>
+          <div class="journey-step-desc">Branded checkout · 30-second flow · stays in domain</div>
+        </div>
+        <div class="journey-step row-end">
+          <div class="journey-step-num">STEP · 03</div>
+          <div class="journey-step-title">Confirm</div>
+          <div class="journey-step-desc">Razorpay confirms · webhook fires · DB writes record</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">STEP · 04</div>
+          <div class="journey-step-title">Receipt</div>
+          <div class="journey-step-desc">80G PDF auto-generated · email + WhatsApp delivery</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">STEP · 05</div>
+          <div class="journey-step-title">Track</div>
+          <div class="journey-step-desc">Donor sees full giving history in their portal</div>
+        </div>
+        <div class="journey-step last-step">
+          <div class="journey-step-num">STEP · 06</div>
+          <div class="journey-step-title">Recap</div>
+          <div class="journey-step-desc">Auto-generated annual statement every March</div>
+        </div>
+      </div>
+      <div class="journey-footer">
+        <strong>TOTAL DONOR TIME: ~30 SECONDS</strong>
+        <span class="jf-divider">·</span>
+        <strong>TOTAL TRUSTEE TIME: 0 SECONDS</strong>
+      </div>
+    </div>
+
+    <p class="donor-quote reveal">
+      "The best back-office is the one that runs itself. The trust gets its evenings back —
+      donors get a giving experience that finally feels like 2026."
+    </p>
+  </div>
+</section>
+
 <!-- ============= TECH STACK ============= -->
 <section class="tech">
   <div class="container">
-    <div class="section-label reveal">05 — Engineering</div>
+    <div class="section-label reveal">06 — Engineering</div>
     <h2 class="section-title reveal">The stack — chosen for <em>longevity</em>, not novelty.</h2>
     <p class="section-intro reveal">
       A trust runs for decades. The website should too. FBT picks tools that compound
@@ -1647,10 +2354,123 @@ section { padding: 120px 40px; position: relative; }
   </div>
 </section>
 
+<!-- ============= SEO / GEO / AEO ============= -->
+<section id="seo" class="seo">
+  <div class="container">
+    <div class="section-label reveal">07 — Discoverability</div>
+    <h2 class="section-title reveal">Found by humans. Found by AI. Found by <em>voice.</em></h2>
+    <p class="section-intro reveal">
+      In 2026, donors don't only Google their causes — they ask Perplexity, ChatGPT Search,
+      Gemini, and Alexa. FBT's V2 build optimizes Siragugal across all three discovery
+      surfaces: classical SEO, Generative Engine Optimization (GEO), and Answer Engine
+      Optimization (AEO). The result: when someone in Tamil Nadu asks
+      <em>"trusted education NGOs in Sivagangai district,"</em> Siragugal shows up — wherever
+      they're asking.
+    </p>
+
+    <div class="seo-pillars">
+      <article class="seo-pillar pillar-seo reveal">
+        <div class="pillar-num">PILLAR · 01</div>
+        <h3 class="pillar-title">Classical SEO</h3>
+        <h4 class="pillar-sub">Google · Bing · DuckDuckGo</h4>
+        <p class="pillar-thesis">Indexable, fast, structured. The fundamentals, done right.</p>
+        <ul class="pillar-list">
+          <li><strong>Schema.org NGO markup</strong><span>NGO · NonProfit · Organization JSON-LD on every page</span></li>
+          <li><strong>Sitemap.xml + robots.txt</strong><span>Auto-generated · submitted to Google Search Console</span></li>
+          <li><strong>OpenGraph + Twitter Card meta</strong><span>Every page renders properly when shared</span></li>
+          <li><strong>Semantic HTML5</strong><span>&lt;article&gt; · &lt;section&gt; · &lt;nav&gt; · proper heading hierarchy</span></li>
+          <li><strong>Core Web Vitals targets</strong><span>LCP &lt; 2.5s · CLS = 0 · INP &lt; 200ms · FCP &lt; 1.5s</span></li>
+          <li><strong>Image SEO</strong><span>Next.js Image · alt text · WebP/AVIF · responsive srcset</span></li>
+          <li><strong>Internal linking architecture</strong><span>Programs ↔ stories ↔ campaigns cross-linked</span></li>
+          <li><strong>Local SEO</strong><span>Tamil Nadu · Sivagangai · Manamadurai geo-tags · Google Business Profile</span></li>
+        </ul>
+      </article>
+
+      <article class="seo-pillar pillar-geo reveal reveal-delay-1">
+        <div class="pillar-num">PILLAR · 02</div>
+        <h3 class="pillar-title">AI Search-Ready</h3>
+        <h4 class="pillar-sub">Perplexity · ChatGPT Search · Gemini · Claude</h4>
+        <p class="pillar-thesis">Content shaped to be quoted, cited, and summarized by LLMs.</p>
+        <ul class="pillar-list">
+          <li><strong>LLM-readable content structure</strong><span>Clear claim · evidence · citation pattern</span></li>
+          <li><strong>llms.txt file</strong><span>Declares mission · programs · key facts · contact for AI crawlers</span></li>
+          <li><strong>Citation-friendly fact pages</strong><span>Every program has a "By the Numbers" block</span></li>
+          <li><strong>Authoritative tone in copy</strong><span>Direct claims with supporting data · no hedge words</span></li>
+          <li><strong>Entity disambiguation</strong><span>Sivagangai Siragugal Trust ≠ other "Siragugal" entities</span></li>
+          <li><strong>FAQPage JSON-LD</strong><span>For the most-asked donor questions</span></li>
+          <li><strong>Beneficiary stories with structured data</strong><span>Person · Article · dated · consented</span></li>
+          <li><strong>Quote-ready summaries</strong><span>Every page has a 2–3 sentence "TL;DR" block</span></li>
+        </ul>
+      </article>
+
+      <article class="seo-pillar pillar-aeo reveal reveal-delay-2">
+        <div class="pillar-num">PILLAR · 03</div>
+        <h3 class="pillar-title">Voice &amp; Featured Snippets</h3>
+        <h4 class="pillar-sub">Google Assistant · Alexa · Siri · featured boxes</h4>
+        <p class="pillar-thesis">Structured to answer questions in 40 words or less.</p>
+        <ul class="pillar-list">
+          <li><strong>HowTo schema</strong><span>For "how to donate to Siragugal"-type queries</span></li>
+          <li><strong>Question / Answer schema</strong><span>On every FAQ entry</span></li>
+          <li><strong>Conversational long-tail content</strong><span>"Where does my donation go?"-style pages</span></li>
+          <li><strong>Featured-snippet optimized blocks</strong><span>Definition · steps · table format</span></li>
+          <li><strong>Voice-search-friendly phrasing</strong><span>Natural questions in headings</span></li>
+          <li><strong>Speakable schema</strong><span>Marks sections suitable for voice readout</span></li>
+          <li><strong>Local-question pages</strong><span>"NGOs near Manamadurai" · "Tamil Nadu education trusts"</span></li>
+          <li><strong>Bilingual answer engines</strong><span>Tamil + English questions both indexed</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="seo-metrics reveal">
+      <div class="seo-metrics-label">PROJECTED · 90 DAYS POST-LAUNCH</div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Organic search impressions / mo</span>
+        <span class="seo-metrics-val">~12,000 – 18,000</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Organic clicks / mo</span>
+        <span class="seo-metrics-val">~480 – 900</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Avg. position (target keywords)</span>
+        <span class="seo-metrics-val">~8 – 14</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">AI search citations / mo (est.)</span>
+        <span class="seo-metrics-val">~25 – 60</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Featured snippets won</span>
+        <span class="seo-metrics-val">~3 – 8</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Page Speed (mobile, real users)</span>
+        <span class="seo-metrics-val">90+ score</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Core Web Vitals — passing pages</span>
+        <span class="seo-metrics-val">100%</span>
+      </div>
+      <div class="seo-metrics-row">
+        <span class="seo-metrics-key">Tamil-language indexed pages</span>
+        <span class="seo-metrics-val">50+ pages</span>
+      </div>
+      <p class="seo-disclaimer">
+        Projections based on FBT benchmarks for similar-tier Indian trust sites in the
+        first 90 days. Final numbers depend on content cadence and donor outreach.
+      </p>
+    </div>
+
+    <p class="seo-quote reveal">
+      "If you're not found, you're not chosen. SEO is the silent first donation."
+    </p>
+  </div>
+</section>
+
 <!-- ============= TIMELINE / GANTT ============= -->
 <section id="timeline" class="timeline">
   <div class="container">
-    <div class="section-label reveal">06 — Timeline</div>
+    <div class="section-label reveal">08 — Timeline</div>
     <h2 class="section-title reveal">Twelve weeks. <em>Three releases.</em> One handover.</h2>
     <p class="section-intro reveal">
       No big-bang launch. Each phase ships live and donors keep using the site through transitions.
@@ -1750,7 +2570,7 @@ section { padding: 120px 40px; position: relative; }
 <!-- ============= DELIVERABLES ============= -->
 <section class="deliver">
   <div class="container">
-    <div class="section-label reveal">07 — Deliverables</div>
+    <div class="section-label reveal">09 — Deliverables</div>
     <h2 class="section-title reveal">What FBT <em>ships</em> at the end of week 12.</h2>
     <p class="section-intro reveal">
       Everything you can hold, click, deploy, or hand to your auditor.
