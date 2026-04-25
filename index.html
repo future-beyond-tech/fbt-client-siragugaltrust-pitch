@@ -381,7 +381,6 @@ section { padding: 120px 40px; position: relative; }
   font-weight: 700;
 }
 .audit-good .audit-col-mark { background: var(--good); color: var(--cream); }
-.audit-bad .audit-col-mark { background: var(--bad); color: var(--cream); }
 .audit-list { list-style: none; }
 .audit-item {
   padding: 18px 0;
@@ -406,7 +405,8 @@ section { padding: 120px 40px; position: relative; }
   margin-top: 2px;
 }
 .audit-good .audit-mark { background: rgba(74, 142, 93, 0.15); color: var(--good); }
-.audit-bad .audit-mark { background: rgba(184, 71, 47, 0.12); color: var(--bad); }
+.audit-bad .audit-mark { background: rgba(200, 80, 26, 0.12); color: var(--terracotta); font-size: 14px; }
+.audit-bad .audit-col-mark { background: var(--terracotta); color: var(--cream); }
 .audit-item strong {
   font-weight: 600;
   display: block;
@@ -1077,13 +1077,14 @@ section { padding: 120px 40px; position: relative; }
     FBT × Siragugal
   </div>
   <div class="nav-links">
-    <a href="#audit">Audit</a>
+    <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener">V1 Live ↗</a>
+    <a href="#v1">What We Built</a>
     <a href="#bench">Benchmark</a>
-    <a href="#build">The Build</a>
+    <a href="#build">V2 Roadmap</a>
     <a href="#transparency">Transparency</a>
     <a href="#timeline">Timeline</a>
   </div>
-  <a href="#invest" class="nav-cta">Begin →</a>
+  <a href="#invest" class="nav-cta">Continue →</a>
 </nav>
 
 <!-- ============= HERO ============= -->
@@ -1093,7 +1094,7 @@ section { padding: 120px 40px; position: relative; }
     <div class="hero-meta">
       <span>FBT × SIRAGUGAL TRUST</span>
       <span class="hero-meta-line"></span>
-      <span>PITCH DOC v1.0</span>
+      <span>CHAPTER 02 PROPOSAL</span>
       <span class="hero-meta-line"></span>
       <span>APRIL 2026</span>
     </div>
@@ -1101,14 +1102,16 @@ section { padding: 120px 40px; position: relative; }
     <div class="hero-tamil">சிறகுகள் கொடுக்கப்படும் இடம்</div>
 
     <h1 class="hero-title">
-      Where wings<br>are <em>given</em>.<br>
-      <span class="strike">Now built</span> right.
+      We built the<br><em>foundation.</em><br>
+      Now let's <span class="strike">stop here</span> grow it.
     </h1>
 
     <p class="hero-sub">
-      Siragugal Trust has stood beside families for 8 years. The website doesn't yet say so.
-      This is the pitch from Future Beyond Technology to fix that — and to build the
-      transparency engine every donor in Tamil Nadu deserves.
+      Eight years of impact, and a website live today at
+      <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener" style="color: var(--terracotta-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;">siragugaltrust.futurebeyondtech.in</a> —
+      shipped by FBT as a strong V1 foundation. This document is our proposal for Chapter 2:
+      the transparency engine, the donor portal, and the platform that makes Siragugal scale
+      without scaling overhead. <em>It would be our pleasure to keep building with you.</em>
     </p>
 
     <div class="hero-stats">
@@ -1121,41 +1124,43 @@ section { padding: 120px 40px; position: relative; }
         <div class="hero-stat-label">Of Service<br>since 2018</div>
       </div>
       <div>
-        <div class="hero-stat-num warn">0</div>
-        <div class="hero-stat-label">Shown on the<br>current homepage</div>
+        <div class="hero-stat-num good">V1</div>
+        <div class="hero-stat-label">Already live<br>built by FBT</div>
       </div>
       <div>
-        <div class="hero-stat-num">12</div>
-        <div class="hero-stat-label">Critical Gaps<br>identified</div>
+        <div class="hero-stat-num">16+</div>
+        <div class="hero-stat-label">Features proposed<br>for V2</div>
       </div>
     </div>
 
     <div class="hero-cta-row">
-      <a href="#audit" class="btn btn-primary">
-        Read the Audit
-        <span class="btn-arrow">→</span>
+      <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener" class="btn btn-primary">
+        Visit V1 Live
+        <span class="btn-arrow">↗</span>
       </a>
       <a href="#build" class="btn btn-ghost">
-        See the Build
+        See the V2 Roadmap
         <span class="btn-arrow">→</span>
       </a>
     </div>
   </div>
 </header>
 
-<!-- ============= AUDIT — CURRENT STATE ============= -->
-<section id="audit" class="audit">
+<!-- ============= V1 — WHAT WE BUILT TOGETHER ============= -->
+<section id="v1" class="audit">
   <div class="container">
-    <div class="section-label reveal">01 — Current State Audit</div>
-    <h2 class="section-title reveal">An honest look at <em>siragugaltrust.futurebeyondtech.in</em></h2>
+    <div class="section-label reveal">01 — Chapter 1 · Built &amp; Live</div>
+    <h2 class="section-title reveal">What FBT shipped at <em>siragugaltrust.futurebeyondtech.in</em></h2>
     <p class="section-intro reveal">
-      Before pitching anything, FBT audited every page of the existing site. Here is what works,
-      and here is what's quietly losing donor trust on every visit.
+      Before proposing anything new, here's an honest map of where V1 stands today —
+      what's already live and serving the trust, and the structural slots V1 deliberately
+      left open for Chapter 2 to fill in.
+      <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta-deep); text-decoration: none; border-bottom: 1px solid var(--terracotta-deep); padding-bottom: 2px;">View V1 live ↗</a>
     </p>
 
     <div class="audit-grid">
       <div class="audit-col audit-good reveal">
-        <h3>What's working <span class="audit-col-mark">KEEP</span></h3>
+        <h3>Live in V1 today <span class="audit-col-mark">SHIPPED</span></h3>
         <ul class="audit-list">
           <li class="audit-item">
             <span class="audit-mark">✓</span>
@@ -1168,35 +1173,35 @@ section { padding: 120px 40px; position: relative; }
             <span class="audit-mark">✓</span>
             <div>
               <strong>Emotional copy with Tamil heart</strong>
-              "Where Wings Are Given" — strong narrative anchor
+              "Where Wings Are Given" — a strong narrative anchor we crafted with the trustees
             </div>
           </li>
           <li class="audit-item">
             <span class="audit-mark">✓</span>
             <div>
-              <strong>Trust badges present</strong>
-              Reg. No. 8/2018, Volunteer-Led, Zero Admin Fee, Community Governed
+              <strong>Trust badges shipped</strong>
+              Reg. No. 8/2018, Volunteer-Led, Zero Admin Fee, Community Governed — all visible
             </div>
           </li>
           <li class="audit-item">
             <span class="audit-mark">✓</span>
             <div>
               <strong>4 programs documented</strong>
-              Scholarship · Dropout School · Diwali · WoDAC — all present with descriptions
+              Scholarship · Dropout School · Diwali · WoDAC — each with its own page and copy
             </div>
           </li>
           <li class="audit-item">
             <span class="audit-mark">✓</span>
             <div>
-              <strong>Razorpay payment link works</strong>
-              External, but functional for one-time gifts
+              <strong>Razorpay payment link integrated</strong>
+              External hosted page, but proven and accepting donations from day one
             </div>
           </li>
           <li class="audit-item">
             <span class="audit-mark">✓</span>
             <div>
               <strong>Multi-channel contact</strong>
-              Phone · Email · WhatsApp present in footer
+              Phone · Email · WhatsApp present in footer, all working
             </div>
           </li>
           <li class="audit-item">
@@ -1206,94 +1211,101 @@ section { padding: 120px 40px; position: relative; }
               ₹500 · ₹1,000 · ₹5,000 monthly with concrete impact statements
             </div>
           </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Mobile-responsive layout</strong>
+              Works across phones, tablets, and desktops out of the box
+            </div>
+          </li>
         </ul>
       </div>
 
       <div class="audit-col audit-bad reveal reveal-delay-1">
-        <h3>What's broken <span class="audit-col-mark">FIX</span></h3>
+        <h3>Ready to grow in V2 <span class="audit-col-mark">NEXT</span></h3>
         <ul class="audit-list">
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>Impact counters all show 0</strong>
-              <span>Lives Impacted: 0 · Scholarship Students: 0 · Dropout Children: 0 · Years: 0</span>
+              <strong>Activate the impact counters with real numbers</strong>
+              <span>V1 wired the structure · V2 connects them to a live database</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>Donations leave the website</strong>
-              <span>External rzp.io link → no analytics, no branded checkout, no receipt UX</span>
+              <strong>Bring the donation flow on-site</strong>
+              <span>Branded checkout · stays in domain · full analytics on conversion</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No 80G receipt automation</strong>
-              <span>Indian donors expect tax receipts — currently zero infrastructure</span>
+              <strong>Add 80G receipt automation</strong>
+              <span>Auto-generated PDF · emailed instantly · stored in donor account</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>"Download Annual Report" button leads nowhere</strong>
-              <span>Transparency promised, transparency artifact missing</span>
+              <strong>Make annual reports downloadable</strong>
+              <span>The "Download Report" button gets a real PDF library behind it</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>Beneficiary stories are placeholders</strong>
-              <span>Three generic quotes — no real names, no faces, no proof</span>
+              <strong>Replace placeholder testimonials with real beneficiary stories</strong>
+              <span>Names · photos · programs (with proper consent layer) — admin-editable</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No financial transparency dashboard</strong>
-              <span>Where did last year's ₹X go? No visible answer</span>
+              <strong>Add a live financial transparency dashboard</strong>
+              <span>Where every rupee went, per program, per quarter — visible to anyone</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>Volunteer signup is a Google Form</strong>
-              <span>No volunteer database, no skill tagging, no follow-up</span>
+              <strong>Upgrade volunteer signup beyond Google Forms</strong>
+              <span>Volunteer database · skill tagging · event assignment · hour logging</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No Tamil language toggle</strong>
-              <span>Tamil Nadu trust, English-only site — accessibility miss</span>
+              <strong>Add Tamil language toggle</strong>
+              <span>Tamil + English side-by-side — Tamil Nadu donors deserve their language first</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No CSR partner page</strong>
-              <span>Locks out corporate India's mandatory 2% CSR funding pool</span>
+              <strong>Open the CSR partner channel</strong>
+              <span>Dedicated page + form for corporate India's mandatory 2% CSR funding</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No campaign-level fundraising</strong>
-              <span>"Raise ₹3L for 13 students by August" — pattern missing</span>
+              <strong>Add campaign-level fundraising</strong>
+              <span>"Raise ₹3L for 13 students by August" with goal · raised · days-left</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>No admin dashboard</strong>
-              <span>Trust can't update content, donations, stories without a developer</span>
+              <strong>Build an admin command center</strong>
+              <span>Trust updates content, stories, campaigns — without needing FBT for every change</span>
             </div>
           </li>
           <li class="audit-item">
-            <span class="audit-mark">✗</span>
+            <span class="audit-mark">→</span>
             <div>
-              <strong>Site looks static</strong>
-              <span>No blog · no events calendar · no recent news — visitors can't tell if you're active</span>
+              <strong>Bring the site alive with blog + events + newsletter</strong>
+              <span>Field updates · news · quarterly impact letter — proves the trust is active</span>
             </div>
           </li>
         </ul>
@@ -1301,12 +1313,12 @@ section { padding: 120px 40px; position: relative; }
     </div>
 
     <div class="cost-banner reveal">
-      <h4>The cost of the gap.</h4>
+      <h4>The V1 promise. The V2 invitation.</h4>
       <p>
-        A first-time donor lands on the home page, sees four big counters reading <em>0</em>, and
-        leaves before reading the mission. Eight years of work — invisible. The Razorpay link
-        becomes a click of last resort, not an invitation. <em>Trust is leaking from a site
-        that's literally about trust.</em>
+        V1 was built as a clean, honest <em>foundation</em> — fast to ship, easy to maintain,
+        ready to grow. Eight years of trust work deserves a website that grows with it. The
+        twelve items above aren't bugs — they're <em>the next chapter</em> we'd love to keep
+        building alongside the Siragugal team.
       </p>
     </div>
   </div>
@@ -1315,11 +1327,12 @@ section { padding: 120px 40px; position: relative; }
 <!-- ============= BENCHMARK ============= -->
 <section id="bench" class="bench">
   <div class="container">
-    <div class="section-label reveal">02 — World-Class Benchmark</div>
-    <h2 class="section-title reveal">What the <em>best</em> trust sites do — and Siragugal doesn't yet.</h2>
+    <div class="section-label reveal">02 — Research · World-Class Benchmark</div>
+    <h2 class="section-title reveal">What the <em>best</em> trust sites do — and what we'd love to bring into V2.</h2>
     <p class="section-intro reveal">
-      FBT studied 14 leading philanthropic websites — global mega-foundations and Indian NGOs.
-      The patterns are clear. Donor confidence is built from the same six muscles, in different combinations.
+      To shape Chapter 2, FBT studied 14 leading philanthropic websites — global mega-foundations
+      and Indian NGOs alike. The patterns are clear, and most of them map cleanly onto features
+      we're proposing for Siragugal V2.
     </p>
 
     <div class="bench-grid">
@@ -1379,13 +1392,13 @@ section { padding: 120px 40px; position: relative; }
       </div>
     </div>
 
-    <h3 style="font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 16px; font-style: italic;" class="reveal">Feature matrix: Siragugal V1 vs. peers vs. FBT V2 build</h3>
+    <h3 style="font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 16px; font-style: italic;" class="reveal">Feature matrix: V1 live · peer benchmark · FBT V2 proposed</h3>
     <div class="matrix-wrap reveal">
       <table class="matrix">
         <thead>
           <tr>
             <th>Feature</th>
-            <th>V1 today</th>
+            <th>V1 live</th>
             <th>Akshaya Patra</th>
             <th>CRY</th>
             <th>Hewlett</th>
@@ -1419,24 +1432,25 @@ section { padding: 120px 40px; position: relative; }
 <!-- ============= FBT BUILD — DARK ============= -->
 <section id="build" class="build">
   <div class="container">
-    <div class="section-label reveal">03 — The FBT Build</div>
-    <h2 class="section-title reveal">A three-phase blueprint. Built like <em>infrastructure</em>, not a brochure.</h2>
+    <div class="section-label reveal">03 — V2 · Chapter 2 Build</div>
+    <h2 class="section-title reveal">A three-phase blueprint. Built like <em>infrastructure</em>, on top of V1's foundation.</h2>
     <p class="section-intro reveal">
-      Every feature ships behind FBT's engineering non-negotiables: SOLID, WCAG 2.2 AA, FCP &lt; 1.5s,
-      LCP &lt; 2.5s, CLS = 0, INP &lt; 200ms. Trust must <em>load fast</em> and <em>last long</em>.
+      Each phase ships behind FBT's engineering non-negotiables: SOLID, WCAG 2.2 AA, FCP &lt; 1.5s,
+      LCP &lt; 2.5s, CLS = 0, INP &lt; 200ms. V1 stays live throughout — no breakage, no downtime,
+      no migration drama. Trust must <em>load fast</em> and <em>last long</em>.
     </p>
 
     <div class="phase-grid">
       <!-- PHASE 1 -->
       <div class="phase reveal">
-        <div class="phase-number">PHASE 01 · MVP</div>
-        <div class="phase-title">Foundation</div>
-        <div class="phase-duration">Weeks 1–4 · The site that doesn't lose donors</div>
+        <div class="phase-number">PHASE 01 · UPGRADE</div>
+        <div class="phase-title">Foundation+</div>
+        <div class="phase-duration">Weeks 1–4 · Activate the V1 frame with real data &amp; real flows</div>
         <ul class="phase-list">
-          <li><strong>Live impact counters</strong><span>Real numbers, animated on scroll, sourced from DB</span></li>
-          <li><strong>Native donation flow</strong><span>Razorpay embedded · branded checkout · stays on-site</span></li>
+          <li><strong>Activate live impact counters</strong><span>Real numbers · animated on scroll · sourced from DB</span></li>
+          <li><strong>On-site donation flow</strong><span>Razorpay embedded · branded checkout · no domain hop</span></li>
           <li><strong>80G receipt auto-PDF</strong><span>Generated on payment success · emailed instantly</span></li>
-          <li><strong>Real beneficiary stories CMS</strong><span>Names · photos · programs · outcome — admin-editable</span></li>
+          <li><strong>Real beneficiary stories CMS</strong><span>Names · photos · programs · outcomes — admin-editable</span></li>
           <li><strong>Annual reports library</strong><span>2018 onwards · downloadable PDFs · public</span></li>
           <li><strong>Tamil + English toggle</strong><span>next-intl · localized routes · proper Tamil typography</span></li>
           <li><strong>Mobile-first PWA</strong><span>Installable · works offline for read-only pages</span></li>
@@ -1791,16 +1805,17 @@ section { padding: 120px 40px; position: relative; }
 <section id="invest" class="invest">
   <div class="invest-content">
     <div class="invest-tamil">அடுத்த அத்தியாயம்</div>
-    <h2 class="invest-title">The next <em>chapter</em><br>of Siragugal Trust.</h2>
+    <h2 class="invest-title">Chapter 02 of<br>Siragugal × <em>FBT.</em></h2>
     <p class="invest-sub">
-      Eight years of impact. Seventy-six lives. One website that finally tells the truth about both.
-      FBT is ready to build it. The only question left is when we start.
+      V1 is live, working, and proudly built. Eight years of impact deserve a digital home that
+      grows with the trust — and it would be our pleasure to keep building it with you.
+      The only question left is when we start Chapter 2.
     </p>
 
     <div class="invest-numbers">
       <div>
         <div class="invest-num">12</div>
-        <div class="invest-num-label">Weeks to ship</div>
+        <div class="invest-num-label">Weeks to ship V2</div>
       </div>
       <div>
         <div class="invest-num">3</div>
@@ -1808,7 +1823,7 @@ section { padding: 120px 40px; position: relative; }
       </div>
       <div>
         <div class="invest-num">16+</div>
-        <div class="invest-num-label">Major features</div>
+        <div class="invest-num-label">New features</div>
       </div>
       <div>
         <div class="invest-num">100%</div>
@@ -1817,11 +1832,15 @@ section { padding: 120px 40px; position: relative; }
     </div>
 
     <div class="invest-cta-row">
-      <a href="https://wa.me/918300438281?text=Siragugal%20Pitch" class="btn btn-gold">
-        Start the Conversation
+      <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener" class="btn btn-cream-ghost">
+        Revisit V1 Live
+        <span class="btn-arrow">↗</span>
+      </a>
+      <a href="https://wa.me/918300438281?text=Siragugal%20V2%20Pitch" class="btn btn-gold">
+        Continue the Journey
         <span class="btn-arrow">→</span>
       </a>
-      <a href="mailto:siragugaltrust@gmail.com?subject=FBT%20Build%20Proposal" class="btn btn-cream-ghost">
+      <a href="mailto:siragugaltrust@gmail.com?subject=FBT%20V2%20Build%20Proposal" class="btn btn-cream-ghost">
         Email the Trust
         <span class="btn-arrow">→</span>
       </a>
@@ -1840,9 +1859,11 @@ section { padding: 120px 40px; position: relative; }
   <div class="footer-grid">
     <div class="footer-brand">FBT × Siragugal Trust</div>
     <div class="footer-meta">
-      <span class="footer-tag">PITCH DOC v1.0</span> · Future Beyond Technology · Chennai · April 2026
+      <span class="footer-tag">CHAPTER 02 PROPOSAL</span> · Future Beyond Technology · Chennai · April 2026
     </div>
-    <div class="footer-meta">Built with care · Engineered for trust</div>
+    <div class="footer-meta">
+      V1 live at <a href="https://siragugaltrust.futurebeyondtech.in/" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold);">siragugaltrust.futurebeyondtech.in</a>
+    </div>
   </div>
 </footer>
 
