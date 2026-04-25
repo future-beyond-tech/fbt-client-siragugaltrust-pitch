@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FBT × Siragugal Trust — Where Wings Are Given 2.0</title>
+<meta name="description" content="A digital transformation pitch from Future Beyond Technology for Siragugal Trust. Honest audit. Engineering blueprint. Transparent build." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+Tamil:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #0E1316;
+  --ink-soft: #1A2126;
+  --ink-line: #2A3239;
+  --parchment: #F4EDE2;
+  --parchment-deep: #EDE3D2;
+  --cream: #FAF6EE;
+  --terracotta: #C8501A;
+  --terracotta-deep: #A23E10;
+  --teal: #1E5F5F;
+  --teal-bright: #2D8B8B;
+  --gold: #C8A95E;
+  --gold-bright: #E5C36F;
+  --rust: #8B3A1F;
+  --bone: #E8DECF;
+  --moss: #4A5D3A;
+  --signal: #FF6B35;
+  --good: #4A8E5D;
+  --bad: #B8472F;
+  --warn: #C49A3F;
+  --shadow-warm: 0 30px 60px -15px rgba(80, 40, 10, 0.18);
+  --shadow-cold: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+  --serif: 'Fraunces', 'Noto Serif Tamil', Georgia, serif;
+  --sans: 'Bricolage Grotesque', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --tamil: 'Noto Serif Tamil', 'Fraunces', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--parchment);
+  color: var(--ink);
+  line-height: 1.55;
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "ss02";
+}
+
+::selection { background: var(--terracotta); color: var(--cream); }
+
+/* ============= NAV ============= */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(244, 237, 226, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(14, 19, 22, 0.08);
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand-mark {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  text-transform: uppercase;
+}
+.nav-links a:hover { opacity: 1; }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+}
+
+/* ============= HERO ============= */
+.hero {
+  min-height: 100vh;
+  padding: 140px 40px 80px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200, 80, 26, 0.08), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(30, 95, 95, 0.08), transparent 70%),
+    var(--parchment);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(14, 19, 22, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.hero-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+.hero-meta-line {
+  flex: 1;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.2;
+  max-width: 80px;
+}
+.hero-tamil {
+  font-family: var(--tamil);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 600;
+  color: var(--terracotta);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(56px, 9vw, 132px);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--terracotta-deep);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.hero-title .strike {
+  position: relative;
+  font-style: normal;
+  font-weight: 300;
+  color: var(--ink);
+  opacity: 0.4;
+}
+.hero-title .strike::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 52%;
+  height: 6px;
+  background: var(--terracotta);
+  transform: rotate(-1deg);
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 350;
+  font-style: italic;
+  max-width: 620px;
+  color: var(--ink);
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 56px;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px;
+  margin-bottom: 56px;
+  max-width: 900px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(14, 19, 22, 0.15);
+}
+.hero-stat-num {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  font-variation-settings: "opsz" 144;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+}
+.hero-stat-num.warn { color: var(--bad); }
+.hero-stat-num.good { color: var(--teal); }
+.hero-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  opacity: 0.65;
+}
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* hero floating mark */
+.hero-mark {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-family: var(--tamil);
+  font-size: clamp(180px, 22vw, 320px);
+  color: var(--terracotta);
+  opacity: 0.06;
+  pointer-events: none;
+  font-weight: 800;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .hero-mark { display: none; }
+}
+
+/* ============= SECTION COMMON ============= */
+section { padding: 120px 40px; position: relative; }
+.container { max-width: 1280px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-label::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  max-width: 900px;
+}
+.section-title em {
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.section-intro {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 350;
+  max-width: 720px;
+  line-height: 1.55;
+  opacity: 0.85;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 768px) {
+  section { padding: 80px 20px; }
+}
+
+/* ============= AUDIT SECTION (V1 STATE) ============= */
+.audit {
+  background: var(--cream);
+  border-top: 1px solid rgba(14, 19, 22, 0.08);
+}
+.audit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+@media (max-width: 900px) {
+  .audit-grid { grid-template-columns: 1fr; }
+}
+.audit-col h3 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.audit-col-mark {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+.audit-good .audit-col-mark { background: var(--good); color: var(--cream); }
+.audit-bad .audit-col-mark { background: var(--bad); color: var(--cream); }
+.audit-list { list-style: none; }
+.audit-item {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(14, 19, 22, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.audit-item:last-child { border-bottom: none; }
+.audit-mark {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+.audit-good .audit-mark { background: rgba(74, 142, 93, 0.15); color: var(--good); }
+.audit-bad .audit-mark { background: rgba(184, 71, 47, 0.12); color: var(--bad); }
+.audit-item strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+.audit-item span {
+  font-size: 13px;
+  opacity: 0.7;
+  font-family: var(--mono);
+}
+
+/* ============= COST OF INACTION ============= */
+.cost-banner {
+  margin-top: 80px;
+  padding: 48px;
+  background: var(--ink);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.cost-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 300px; height: 100%;
+  background: radial-gradient(circle at 100% 50%, rgba(200, 80, 26, 0.3), transparent 70%);
+}
+.cost-banner h4 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  font-style: italic;
+  position: relative;
+}
+.cost-banner p {
+  max-width: 700px;
+  opacity: 0.85;
+  font-size: 16px;
+  position: relative;
+}
+.cost-banner em { color: var(--gold-bright); font-style: normal; font-weight: 600; }
+
+/* ============= BENCHMARK SECTION ============= */
+.bench {
+  background: var(--parchment-deep);
+}
+.bench-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.bench-card {
+  background: var(--cream);
+  padding: 32px;
+  border: 1px solid rgba(14, 19, 22, 0.08);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.bench-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-warm);
+}
+.bench-card-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--terracotta);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.bench-card-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.bench-card-region {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+.bench-card-takeaway {
+  font-size: 14px;
+  line-height: 1.55;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(14, 19, 22, 0.2);
+}
+.bench-card-takeaway strong {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--terracotta-deep);
+}
+
+/* ============= MATRIX TABLE ============= */
+.matrix-wrap {
+  overflow-x: auto;
+  margin-top: 48px;
+  border: 1px solid rgba(14, 19, 22, 0.12);
+  background: var(--cream);
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 800px;
+}
+.matrix th, .matrix td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(14, 19, 22, 0.08);
+}
+.matrix th {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+}
+.matrix th:first-child { text-align: left; }
+.matrix th:not(:first-child), .matrix td:not(:first-child) { text-align: center; width: 80px; }
+.matrix td:first-child {
+  font-weight: 500;
+  font-family: var(--serif);
+  font-size: 15px;
+}
+.matrix tr:hover td { background: rgba(200, 80, 26, 0.03); }
+.cell-y { color: var(--good); font-weight: 700; font-family: var(--mono); }
+.cell-n { color: var(--bad); font-family: var(--mono); opacity: 0.5; }
+.cell-fbt { color: var(--terracotta); font-family: var(--mono); font-weight: 700; }
+.matrix .col-fbt {
+  background: rgba(200, 80, 26, 0.06);
+  border-left: 2px solid var(--terracotta);
+  border-right: 2px solid var(--terracotta);
+}
+.matrix th.col-fbt { background: var(--terracotta); border-color: var(--terracotta-deep); }
+
+/* ============= FBT BUILD (DARK) ============= */
+.build {
+  background: var(--ink);
+  color: var(--cream);
+  position: relative;
+}
+.build::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(200, 80, 26, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(30, 95, 95, 0.15), transparent 50%);
+  pointer-events: none;
+}
+.build .container { position: relative; }
+.build .section-label { color: var(--gold); }
+.build .section-title { color: var(--cream); }
+.build .section-title em { color: var(--gold-bright); }
+.build .section-intro { opacity: 0.7; }
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+}
+@media (max-width: 900px) {
+  .phase-grid { grid-template-columns: 1fr; }
+}
+.phase {
+  padding: 48px 36px;
+  border-right: 1px solid rgba(232, 222, 207, 0.15);
+  position: relative;
+  transition: background 0.3s;
+}
+.phase:last-child { border-right: none; }
+.phase:hover { background: rgba(200, 80, 26, 0.05); }
+@media (max-width: 900px) {
+  .phase { border-right: none; border-bottom: 1px solid rgba(232, 222, 207, 0.15); }
+  .phase:last-child { border-bottom: none; }
+}
+.phase-number {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.phase-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.phase-duration {
+  font-family: var(--mono);
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed rgba(232, 222, 207, 0.2);
+}
+.phase-list { list-style: none; }
+.phase-list li {
+  padding: 10px 0 10px 24px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.08);
+}
+.phase-list li:last-child { border-bottom: none; }
+.phase-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: var(--terracotta);
+  font-family: var(--mono);
+  font-weight: 700;
+}
+.phase-list li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.phase-list li span {
+  opacity: 0.65;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+/* ============= TRANSPARENCY ENGINE ============= */
+.transp {
+  background: var(--ink-soft);
+  color: var(--cream);
+  border-top: 1px solid rgba(232, 222, 207, 0.1);
+}
+.transp .section-label { color: var(--gold); }
+.transp .section-title { color: var(--cream); }
+.transp .section-title em { color: var(--terracotta); }
+.transp-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .transp-grid { grid-template-columns: 1fr; }
+}
+.transp-mock {
+  background: #0A0E10;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+  border-radius: 4px;
+  padding: 32px;
+  font-family: var(--mono);
+  font-size: 12px;
+  position: relative;
+}
+.transp-mock-label {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: var(--ink-soft);
+  padding: 0 12px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.dash-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.1);
+}
+.dash-row:last-child { border-bottom: none; }
+.dash-key { opacity: 0.6; }
+.dash-val { font-weight: 700; color: var(--gold-bright); }
+.dash-val.signal { color: var(--good); }
+.dash-bar {
+  height: 6px;
+  background: rgba(232, 222, 207, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.dash-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-bright), var(--gold-bright));
+  border-radius: 2px;
+  animation: fill 2s ease-out;
+}
+@keyframes fill {
+  from { width: 0; }
+}
+.dash-section {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(232, 222, 207, 0.1);
+}
+.dash-section:last-child { border-bottom: none; }
+.dash-section-title {
+  color: var(--terracotta);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.transp-features { display: flex; flex-direction: column; gap: 16px; }
+.transp-feat {
+  padding: 24px;
+  background: rgba(232, 222, 207, 0.04);
+  border: 1px solid rgba(232, 222, 207, 0.1);
+  border-left: 3px solid var(--terracotta);
+}
+.transp-feat:nth-child(2n) { border-left-color: var(--gold); }
+.transp-feat:nth-child(3n) { border-left-color: var(--teal-bright); }
+.transp-feat-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.transp-feat-desc {
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.55;
+}
+
+/* ============= TECH STACK ============= */
+.tech {
+  background: var(--parchment);
+  border-top: 1px solid rgba(14, 19, 22, 0.08);
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  margin-top: 48px;
+  border: 1px solid rgba(14, 19, 22, 0.15);
+  background: var(--cream);
+}
+.tech-cell {
+  padding: 32px 28px;
+  border-right: 1px solid rgba(14, 19, 22, 0.08);
+  border-bottom: 1px solid rgba(14, 19, 22, 0.08);
+  position: relative;
+}
+.tech-cell-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 10px;
+}
+.tech-cell-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.tech-cell-why {
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.75;
+  font-family: var(--mono);
+}
+
+/* ============= TIMELINE ============= */
+.timeline {
+  background: var(--ink);
+  color: var(--cream);
+}
+.timeline .section-label { color: var(--gold); }
+.timeline .section-title { color: var(--cream); }
+.timeline .section-title em { color: var(--gold-bright); }
+.gantt {
+  margin-top: 48px;
+  font-family: var(--mono);
+  font-size: 12px;
+  border: 1px solid rgba(232, 222, 207, 0.15);
+}
+.gantt-header {
+  display: grid;
+  grid-template-columns: 240px repeat(12, 1fr);
+  background: rgba(232, 222, 207, 0.04);
+  border-bottom: 1px solid rgba(232, 222, 207, 0.15);
+}
+.gantt-header > div {
+  padding: 14px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+  border-right: 1px solid rgba(232, 222, 207, 0.08);
+  text-align: center;
+  color: var(--gold);
+}
+.gantt-header > div:first-child { text-align: left; }
+.gantt-row {
+  display: grid;
+  grid-template-columns: 240px repeat(12, 1fr);
+  border-bottom: 1px solid rgba(232, 222, 207, 0.08);
+  position: relative;
+  align-items: stretch;
+}
+.gantt-row:last-child { border-bottom: none; }
+.gantt-label {
+  padding: 18px 16px;
+  font-size: 13px;
+  border-right: 1px solid rgba(232, 222, 207, 0.08);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.gantt-cell {
+  border-right: 1px solid rgba(232, 222, 207, 0.04);
+  position: relative;
+  min-height: 50px;
+}
+.gantt-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.bar-1 { background: var(--gold); }
+.bar-2 { background: var(--terracotta); color: var(--cream); }
+.bar-3 { background: var(--teal-bright); color: var(--cream); }
+.bar-4 { background: var(--moss); color: var(--cream); }
+@media (max-width: 1100px) {
+  .gantt-header, .gantt-row { grid-template-columns: 160px repeat(12, 1fr); }
+  .gantt-label { padding: 14px 10px; font-size: 11px; }
+}
+@media (max-width: 700px) {
+  .gantt { overflow-x: auto; display: block; }
+  .gantt-header, .gantt-row { min-width: 800px; }
+}
+
+/* ============= DELIVERABLES ============= */
+.deliver {
+  background: var(--cream);
+  border-top: 1px solid rgba(14, 19, 22, 0.08);
+}
+.deliver-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0;
+  margin-top: 48px;
+  border-left: 1px solid rgba(14, 19, 22, 0.15);
+  border-top: 1px solid rgba(14, 19, 22, 0.15);
+}
+.deliver-item {
+  padding: 32px;
+  border-right: 1px solid rgba(14, 19, 22, 0.15);
+  border-bottom: 1px solid rgba(14, 19, 22, 0.15);
+  background: var(--cream);
+  transition: background 0.3s;
+}
+.deliver-item:hover { background: var(--parchment); }
+.deliver-icon {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--terracotta);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+.deliver-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.deliver-desc {
+  font-size: 14px;
+  opacity: 0.7;
+  line-height: 1.55;
+}
+
+/* ============= INVESTMENT / CTA ============= */
+.invest {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 140px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.invest::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(200, 80, 26, 0.15), transparent 70%);
+}
+.invest-content { position: relative; max-width: 1000px; margin: 0 auto; text-align: center; }
+.invest-tamil {
+  font-family: var(--tamil);
+  font-size: clamp(20px, 2vw, 28px);
+  color: var(--gold);
+  margin-bottom: 24px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.invest-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.invest-title em { font-style: italic; color: var(--gold-bright); font-weight: 400; }
+.invest-sub {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-style: italic;
+  opacity: 0.85;
+  max-width: 700px;
+  margin: 0 auto 56px;
+  line-height: 1.55;
+}
+.invest-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  margin-bottom: 64px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(232, 222, 207, 0.2);
+  border-bottom: 1px solid rgba(232, 222, 207, 0.2);
+}
+.invest-num {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  font-variation-settings: "opsz" 144;
+  color: var(--gold-bright);
+  line-height: 1;
+}
+.invest-num-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  opacity: 0.7;
+}
+.invest-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+  border: 1px solid var(--gold);
+  font-weight: 700;
+}
+.btn-gold:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+.btn-cream-ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(232, 222, 207, 0.4);
+}
+.btn-cream-ghost:hover {
+  background: rgba(232, 222, 207, 0.1);
+  border-color: var(--cream);
+}
+
+/* ============= FOOTER ============= */
+.footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 48px 40px;
+  border-top: 1px solid rgba(232, 222, 207, 0.15);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.footer-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.footer-meta { opacity: 0.6; font-size: 11px; }
+.footer-tag { color: var(--gold); }
+
+/* ============= ANIMATIONS ============= */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* counter for stats */
+.counter { display: inline-block; }
+
+/* ornament dividers */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 48px auto;
+  max-width: 200px;
+  opacity: 0.4;
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-brand-mark"></span>
+    FBT × Siragugal
+  </div>
+  <div class="nav-links">
+    <a href="#audit">Audit</a>
+    <a href="#bench">Benchmark</a>
+    <a href="#build">The Build</a>
+    <a href="#transparency">Transparency</a>
+    <a href="#timeline">Timeline</a>
+  </div>
+  <a href="#invest" class="nav-cta">Begin →</a>
+</nav>
+
+<!-- ============= HERO ============= -->
+<header class="hero">
+  <div class="hero-mark">சி</div>
+  <div class="hero-grid">
+    <div class="hero-meta">
+      <span>FBT × SIRAGUGAL TRUST</span>
+      <span class="hero-meta-line"></span>
+      <span>PITCH DOC v1.0</span>
+      <span class="hero-meta-line"></span>
+      <span>APRIL 2026</span>
+    </div>
+
+    <div class="hero-tamil">சிறகுகள் கொடுக்கப்படும் இடம்</div>
+
+    <h1 class="hero-title">
+      Where wings<br>are <em>given</em>.<br>
+      <span class="strike">Now built</span> right.
+    </h1>
+
+    <p class="hero-sub">
+      Siragugal Trust has stood beside families for 8 years. The website doesn't yet say so.
+      This is the pitch from Future Beyond Technology to fix that — and to build the
+      transparency engine every donor in Tamil Nadu deserves.
+    </p>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num good">76</div>
+        <div class="hero-stat-label">Lives Touched<br>(13 + 60 + 3 graduates)</div>
+      </div>
+      <div>
+        <div class="hero-stat-num good">8 yrs</div>
+        <div class="hero-stat-label">Of Service<br>since 2018</div>
+      </div>
+      <div>
+        <div class="hero-stat-num warn">0</div>
+        <div class="hero-stat-label">Shown on the<br>current homepage</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">Critical Gaps<br>identified</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="#audit" class="btn btn-primary">
+        Read the Audit
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#build" class="btn btn-ghost">
+        See the Build
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============= AUDIT — CURRENT STATE ============= -->
+<section id="audit" class="audit">
+  <div class="container">
+    <div class="section-label reveal">01 — Current State Audit</div>
+    <h2 class="section-title reveal">An honest look at <em>siragugaltrust.futurebeyondtech.in</em></h2>
+    <p class="section-intro reveal">
+      Before pitching anything, FBT audited every page of the existing site. Here is what works,
+      and here is what's quietly losing donor trust on every visit.
+    </p>
+
+    <div class="audit-grid">
+      <div class="audit-col audit-good reveal">
+        <h3>What's working <span class="audit-col-mark">KEEP</span></h3>
+        <ul class="audit-list">
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Clean information architecture</strong>
+              8 pages mapped well: Home, About, Programs, Gallery, Team, Donate, Join, Contact
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Emotional copy with Tamil heart</strong>
+              "Where Wings Are Given" — strong narrative anchor
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Trust badges present</strong>
+              Reg. No. 8/2018, Volunteer-Led, Zero Admin Fee, Community Governed
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>4 programs documented</strong>
+              Scholarship · Dropout School · Diwali · WoDAC — all present with descriptions
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Razorpay payment link works</strong>
+              External, but functional for one-time gifts
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Multi-channel contact</strong>
+              Phone · Email · WhatsApp present in footer
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✓</span>
+            <div>
+              <strong>Donation tier suggestions</strong>
+              ₹500 · ₹1,000 · ₹5,000 monthly with concrete impact statements
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="audit-col audit-bad reveal reveal-delay-1">
+        <h3>What's broken <span class="audit-col-mark">FIX</span></h3>
+        <ul class="audit-list">
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>Impact counters all show 0</strong>
+              <span>Lives Impacted: 0 · Scholarship Students: 0 · Dropout Children: 0 · Years: 0</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>Donations leave the website</strong>
+              <span>External rzp.io link → no analytics, no branded checkout, no receipt UX</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No 80G receipt automation</strong>
+              <span>Indian donors expect tax receipts — currently zero infrastructure</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>"Download Annual Report" button leads nowhere</strong>
+              <span>Transparency promised, transparency artifact missing</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>Beneficiary stories are placeholders</strong>
+              <span>Three generic quotes — no real names, no faces, no proof</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No financial transparency dashboard</strong>
+              <span>Where did last year's ₹X go? No visible answer</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>Volunteer signup is a Google Form</strong>
+              <span>No volunteer database, no skill tagging, no follow-up</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No Tamil language toggle</strong>
+              <span>Tamil Nadu trust, English-only site — accessibility miss</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No CSR partner page</strong>
+              <span>Locks out corporate India's mandatory 2% CSR funding pool</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No campaign-level fundraising</strong>
+              <span>"Raise ₹3L for 13 students by August" — pattern missing</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>No admin dashboard</strong>
+              <span>Trust can't update content, donations, stories without a developer</span>
+            </div>
+          </li>
+          <li class="audit-item">
+            <span class="audit-mark">✗</span>
+            <div>
+              <strong>Site looks static</strong>
+              <span>No blog · no events calendar · no recent news — visitors can't tell if you're active</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cost-banner reveal">
+      <h4>The cost of the gap.</h4>
+      <p>
+        A first-time donor lands on the home page, sees four big counters reading <em>0</em>, and
+        leaves before reading the mission. Eight years of work — invisible. The Razorpay link
+        becomes a click of last resort, not an invitation. <em>Trust is leaking from a site
+        that's literally about trust.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============= BENCHMARK ============= -->
+<section id="bench" class="bench">
+  <div class="container">
+    <div class="section-label reveal">02 — World-Class Benchmark</div>
+    <h2 class="section-title reveal">What the <em>best</em> trust sites do — and Siragugal doesn't yet.</h2>
+    <p class="section-intro reveal">
+      FBT studied 14 leading philanthropic websites — global mega-foundations and Indian NGOs.
+      The patterns are clear. Donor confidence is built from the same six muscles, in different combinations.
+    </p>
+
+    <div class="bench-grid">
+      <div class="bench-card reveal">
+        <div class="bench-card-num">REF · 01</div>
+        <div class="bench-card-name">Akshaya Patra</div>
+        <div class="bench-card-region">Bangalore · India</div>
+        <div class="bench-card-takeaway">
+          <strong>Campaign cards with raised/goal counters.</strong>
+          Beneficiary stories. Audit reports as PDFs. Real-time meals-served counter. CSR partner page front and centre.
+        </div>
+      </div>
+      <div class="bench-card reveal reveal-delay-1">
+        <div class="bench-card-num">REF · 02</div>
+        <div class="bench-card-name">CRY India</div>
+        <div class="bench-card-region">Mumbai · India</div>
+        <div class="bench-card-takeaway">
+          <strong>Compliance theatre done right.</strong>
+          80G · 12A · FCRA certificates displayed. Tax-benefit calculator before donation. Annual + FCRA reports openly downloadable.
+        </div>
+      </div>
+      <div class="bench-card reveal reveal-delay-2">
+        <div class="bench-card-num">REF · 03</div>
+        <div class="bench-card-name">Goonj</div>
+        <div class="bench-card-region">Delhi · India</div>
+        <div class="bench-card-takeaway">
+          <strong>Living updates and field stories.</strong>
+          Disaster relief feed. State-wise reports. Collection camps. Stories of change refresh weekly. Site never feels static.
+        </div>
+      </div>
+      <div class="bench-card reveal">
+        <div class="bench-card-num">REF · 04</div>
+        <div class="bench-card-name">Hewlett Foundation</div>
+        <div class="bench-card-region">California · USA</div>
+        <div class="bench-card-takeaway">
+          <strong>Radical transparency.</strong>
+          ₹13.9B in assets disclosed. Grantee Perception Report published annually. Grantmaking FAQ explains every decision.
+        </div>
+      </div>
+      <div class="bench-card reveal reveal-delay-1">
+        <div class="bench-card-num">REF · 05</div>
+        <div class="bench-card-name">Bill & Melinda Gates</div>
+        <div class="bench-card-region">Seattle · USA</div>
+        <div class="bench-card-takeaway">
+          <strong>Multimedia storytelling at scale.</strong>
+          Goalkeepers Report. Annual Letter from CEO. Live foundation-facts dashboard. The Optimist newsletter.
+        </div>
+      </div>
+      <div class="bench-card reveal reveal-delay-2">
+        <div class="bench-card-num">REF · 06</div>
+        <div class="bench-card-name">Tata Trusts</div>
+        <div class="bench-card-region">Mumbai · India</div>
+        <div class="bench-card-takeaway">
+          <strong>Programme depth.</strong>
+          Each programme has its own portal: budget, partners, locations, outcomes. The website itself behaves like an annual report.
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 16px; font-style: italic;" class="reveal">Feature matrix: Siragugal V1 vs. peers vs. FBT V2 build</h3>
+    <div class="matrix-wrap reveal">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>V1 today</th>
+            <th>Akshaya Patra</th>
+            <th>CRY</th>
+            <th>Hewlett</th>
+            <th>Gates</th>
+            <th class="col-fbt">FBT V2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Working impact counters</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ live</td></tr>
+          <tr><td>Native donation flow</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ branded</td></tr>
+          <tr><td>80G auto-receipt</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓ PDF</td></tr>
+          <tr><td>Campaign pages (goal/raised)</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>Real beneficiary stories</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ CMS</td></tr>
+          <tr><td>Annual reports downloadable</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>Financial dashboard</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ live</td></tr>
+          <tr><td>80G / 12A certificates display</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>CSR partner page</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>Volunteer management</td><td class="cell-n">form</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓ DB</td></tr>
+          <tr><td>Tamil language toggle</td><td class="cell-n">✗</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓ EN/TA</td></tr>
+          <tr><td>Newsletter</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>Blog / news / events</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ MDX</td></tr>
+          <tr><td>Admin dashboard for trust</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓ full</td></tr>
+          <tr><td>Mobile-first PWA</td><td class="cell-n">partial</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="col-fbt cell-fbt">✓</td></tr>
+          <tr><td>Donor account / history</td><td class="cell-n">✗</td><td class="cell-y">✓</td><td class="cell-y">✓</td><td class="cell-n">—</td><td class="cell-n">—</td><td class="col-fbt cell-fbt">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FBT BUILD — DARK ============= -->
+<section id="build" class="build">
+  <div class="container">
+    <div class="section-label reveal">03 — The FBT Build</div>
+    <h2 class="section-title reveal">A three-phase blueprint. Built like <em>infrastructure</em>, not a brochure.</h2>
+    <p class="section-intro reveal">
+      Every feature ships behind FBT's engineering non-negotiables: SOLID, WCAG 2.2 AA, FCP &lt; 1.5s,
+      LCP &lt; 2.5s, CLS = 0, INP &lt; 200ms. Trust must <em>load fast</em> and <em>last long</em>.
+    </p>
+
+    <div class="phase-grid">
+      <!-- PHASE 1 -->
+      <div class="phase reveal">
+        <div class="phase-number">PHASE 01 · MVP</div>
+        <div class="phase-title">Foundation</div>
+        <div class="phase-duration">Weeks 1–4 · The site that doesn't lose donors</div>
+        <ul class="phase-list">
+          <li><strong>Live impact counters</strong><span>Real numbers, animated on scroll, sourced from DB</span></li>
+          <li><strong>Native donation flow</strong><span>Razorpay embedded · branded checkout · stays on-site</span></li>
+          <li><strong>80G receipt auto-PDF</strong><span>Generated on payment success · emailed instantly</span></li>
+          <li><strong>Real beneficiary stories CMS</strong><span>Names · photos · programs · outcome — admin-editable</span></li>
+          <li><strong>Annual reports library</strong><span>2018 onwards · downloadable PDFs · public</span></li>
+          <li><strong>Tamil + English toggle</strong><span>next-intl · localized routes · proper Tamil typography</span></li>
+          <li><strong>Mobile-first PWA</strong><span>Installable · works offline for read-only pages</span></li>
+          <li><strong>SEO + structured data</strong><span>Schema.org NGO markup · GEO-ready for AI search</span></li>
+        </ul>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase reveal reveal-delay-1">
+        <div class="phase-number">PHASE 02 · TRANSPARENCY ENGINE</div>
+        <div class="phase-title">Proof</div>
+        <div class="phase-duration">Weeks 5–8 · The differentiator</div>
+        <ul class="phase-list">
+          <li><strong>Live financial dashboard</strong><span>Funds raised vs. utilized · per-program · per-year</span></li>
+          <li><strong>Fund utilization tree</strong><span>Every ₹1 traced from donor → program → beneficiary</span></li>
+          <li><strong>Campaign pages with goals</strong><span>Raised · target · days left · supporter count</span></li>
+          <li><strong>Beneficiary database (private/public split)</strong><span>Public stories with consent · private records for audit</span></li>
+          <li><strong>Certificate display gallery</strong><span>Reg. No. 8/2018 · 80G · 12A · audit reports — visual</span></li>
+          <li><strong>Donor account portal</strong><span>Login · giving history · download all 80Gs · update info</span></li>
+          <li><strong>CSR partner page + form</strong><span>Corporate India unlock · 2% mandatory CSR pipeline</span></li>
+          <li><strong>Recurring monthly donations</strong><span>Auto-debit · pause · resume · upgrade · cancel</span></li>
+        </ul>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase reveal reveal-delay-2">
+        <div class="phase-number">PHASE 03 · PLATFORM</div>
+        <div class="phase-title">Scale</div>
+        <div class="phase-duration">Weeks 9–12 · A platform Siragugal can run alone</div>
+        <ul class="phase-list">
+          <li><strong>Admin command center</strong><span>Edit content · approve stories · close campaigns · mass-email</span></li>
+          <li><strong>Volunteer management module</strong><span>Profile · skills · availability · assign to events · log hours</span></li>
+          <li><strong>Events + calendar</strong><span>Diwali · scholarship interview days · public RSVP</span></li>
+          <li><strong>Blog + news (MDX-driven)</strong><span>Field updates · founder posts · tagged · searchable</span></li>
+          <li><strong>Newsletter automation</strong><span>Quarterly impact letter · auto-segmented by donor tier</span></li>
+          <li><strong>WhatsApp donor broadcast (opt-in)</strong><span>Tamil-first · receipts · campaign milestones</span></li>
+          <li><strong>Analytics & reporting</strong><span>Donor cohorts · LTV · drop-off funnel · CSR pipeline view</span></li>
+          <li><strong>Backup, monitoring, observability</strong><span>Daily DB backups · uptime alerts · error tracking</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TRANSPARENCY ENGINE PREVIEW ============= -->
+<section id="transparency" class="transp">
+  <div class="container">
+    <div class="section-label reveal">04 — The Differentiator</div>
+    <h2 class="section-title reveal">The <em>Transparency Engine</em> — what no other small Indian trust has.</h2>
+    <p class="section-intro reveal">
+      Tata Trusts has it. Hewlett has it. Akshaya Patra has it. Most district-level trusts in
+      Tamil Nadu don't. Siragugal can be the first in its tier — and it becomes the reason
+      donors choose you over Goonj or CRY for the same cause.
+    </p>
+
+    <div class="transp-grid">
+      <!-- LEFT: dashboard mock -->
+      <div class="transp-mock reveal">
+        <div class="transp-mock-label">LIVE · /transparency</div>
+        <div class="dash-section">
+          <div class="dash-section-title">Fiscal Year 2025-26 · Live</div>
+          <div class="dash-row">
+            <span class="dash-key">Total raised</span>
+            <span class="dash-val">₹ 4,82,000</span>
+          </div>
+          <div class="dash-row">
+            <span class="dash-key">Total deployed</span>
+            <span class="dash-val signal">₹ 4,82,000 (100%)</span>
+          </div>
+          <div class="dash-row">
+            <span class="dash-key">Admin overhead</span>
+            <span class="dash-val signal">₹ 0 (0.0%)</span>
+          </div>
+          <div class="dash-row">
+            <span class="dash-key">Donors this year</span>
+            <span class="dash-val">147</span>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="dash-section-title">Per-Program Allocation</div>
+          <div class="dash-row"><span class="dash-key">Scholarship (13 students)</span><span class="dash-val">₹ 3,12,000</span></div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width: 65%"></div></div>
+          <div class="dash-row"><span class="dash-key">Dropout School (60 children)</span><span class="dash-val">₹ 1,40,000</span></div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width: 29%"></div></div>
+          <div class="dash-row"><span class="dash-key">Diwali · WoDAC</span><span class="dash-val">₹ 30,000</span></div>
+          <div class="dash-bar"><div class="dash-bar-fill" style="width: 6%"></div></div>
+        </div>
+
+        <div class="dash-section">
+          <div class="dash-section-title">Trust Documents · Public</div>
+          <div class="dash-row"><span class="dash-key">Reg. No. 8/2018 — Trust Deed</span><span class="dash-val signal">↓ PDF</span></div>
+          <div class="dash-row"><span class="dash-key">80G Certificate (FY 25-26)</span><span class="dash-val signal">↓ PDF</span></div>
+          <div class="dash-row"><span class="dash-key">12A Certificate</span><span class="dash-val signal">↓ PDF</span></div>
+          <div class="dash-row"><span class="dash-key">Audit Report 2024-25</span><span class="dash-val signal">↓ PDF</span></div>
+          <div class="dash-row"><span class="dash-key">Annual Report 2024-25</span><span class="dash-val signal">↓ PDF</span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: feature breakdown -->
+      <div class="transp-features">
+        <div class="transp-feat reveal">
+          <div class="transp-feat-title">Live financial dashboard</div>
+          <div class="transp-feat-desc">
+            Updated in real time. Total raised. Total deployed. Per-program allocation.
+            A donor can see exactly where their last ₹500 went without filing an RTI.
+          </div>
+        </div>
+        <div class="transp-feat reveal reveal-delay-1">
+          <div class="transp-feat-title">Fund-utilization trail</div>
+          <div class="transp-feat-desc">
+            Each donation links to one or more outcome events: a fees-paid receipt, a
+            school-supplies invoice, a hostel-stay log. The chain is auditable.
+          </div>
+        </div>
+        <div class="transp-feat reveal reveal-delay-2">
+          <div class="transp-feat-title">Beneficiary stories with consent layer</div>
+          <div class="transp-feat-desc">
+            Real names, real photos, real outcomes — but only with documented consent.
+            Stories without consent stay in the audit DB, not on the public site.
+          </div>
+        </div>
+        <div class="transp-feat reveal">
+          <div class="transp-feat-title">Donor portal — your giving, on record</div>
+          <div class="transp-feat-desc">
+            Every donor logs in to see their full history, redownload any 80G receipt,
+            update PAN, and start or pause monthly giving. Tax season, solved.
+          </div>
+        </div>
+        <div class="transp-feat reveal reveal-delay-1">
+          <div class="transp-feat-title">Quarterly transparency report</div>
+          <div class="transp-feat-desc">
+            Auto-generated. PDF + email + WhatsApp broadcast. Numbers · stories · what
+            went wrong · what's next. Eight years of work, finally documented in public.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TECH STACK ============= -->
+<section class="tech">
+  <div class="container">
+    <div class="section-label reveal">05 — Engineering</div>
+    <h2 class="section-title reveal">The stack — chosen for <em>longevity</em>, not novelty.</h2>
+    <p class="section-intro reveal">
+      A trust runs for decades. The website should too. FBT picks tools that compound
+      maintainability and recruit-ability over time, not the framework of the month.
+    </p>
+
+    <div class="tech-grid reveal">
+      <div class="tech-cell">
+        <div class="tech-cell-label">Frontend</div>
+        <div class="tech-cell-name">Next.js 15</div>
+        <div class="tech-cell-why">PPR rendering · server components · the React 19 baseline. Fast everywhere, indexable everywhere.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Backend</div>
+        <div class="tech-cell-name">.NET 8</div>
+        <div class="tech-cell-why">Vertical Slice + CQRS. Boring · battle-tested · still fast in 2036.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Database</div>
+        <div class="tech-cell-name">PostgreSQL</div>
+        <div class="tech-cell-why">Donations, beneficiaries, audit trails. Relational data deserves a relational DB.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Payments</div>
+        <div class="tech-cell-name">Razorpay</div>
+        <div class="tech-cell-why">Native embed · UPI + cards + netbanking · webhook-driven receipts.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Auth</div>
+        <div class="tech-cell-name">Custom JWT + OTP</div>
+        <div class="tech-cell-why">Donor accounts · admin roles · OTP-before-persistence. No third-party lock-in.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Hosting</div>
+        <div class="tech-cell-name">Railway + Hostinger DNS</div>
+        <div class="tech-cell-why">Standalone Node server · DataProtection in DB · zero-downtime deploys.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Analytics</div>
+        <div class="tech-cell-name">Plausible</div>
+        <div class="tech-cell-why">No cookies · GDPR-clean · public dashboard option for transparency.</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Localization</div>
+        <div class="tech-cell-name">next-intl</div>
+        <div class="tech-cell-why">Tamil + English routes · server-rendered · proper diacritic handling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TIMELINE / GANTT ============= -->
+<section id="timeline" class="timeline">
+  <div class="container">
+    <div class="section-label reveal">06 — Timeline</div>
+    <h2 class="section-title reveal">Twelve weeks. <em>Three releases.</em> One handover.</h2>
+    <p class="section-intro reveal">
+      No big-bang launch. Each phase ships live and donors keep using the site through transitions.
+    </p>
+
+    <div class="gantt reveal">
+      <div class="gantt-header">
+        <div>Workstream</div>
+        <div>W1</div><div>W2</div><div>W3</div><div>W4</div>
+        <div>W5</div><div>W6</div><div>W7</div><div>W8</div>
+        <div>W9</div><div>W10</div><div>W11</div><div>W12</div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Discovery + Design</div>
+        <div class="gantt-cell"><div class="gantt-bar bar-1" style="left: 4px; right: 4px; width: calc(200% - 8px);">Wireframes · brand · content</div></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Phase 1 · MVP</div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"><div class="gantt-bar bar-2" style="left: 4px; right: 4px; width: calc(200% - 8px);">Foundation · live counters · donations · 80G</div></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Phase 2 · Transparency</div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"><div class="gantt-bar bar-3" style="left: 4px; right: 4px; width: calc(400% - 8px);">Dashboard · campaigns · donor portal · CSR</div></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Phase 3 · Platform</div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"><div class="gantt-bar bar-4" style="left: 4px; right: 4px; width: calc(300% - 8px);">Admin · volunteers · blog · newsletter · analytics</div></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">QA + Handover</div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"></div>
+        <div class="gantt-cell"><div class="gantt-bar bar-1" style="left: 4px; right: 4px;">QA · docs · train</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= DELIVERABLES ============= -->
+<section class="deliver">
+  <div class="container">
+    <div class="section-label reveal">07 — Deliverables</div>
+    <h2 class="section-title reveal">What FBT <em>ships</em> at the end of week 12.</h2>
+    <p class="section-intro reveal">
+      Everything you can hold, click, deploy, or hand to your auditor.
+    </p>
+
+    <div class="deliver-grid">
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 01</div>
+        <div class="deliver-title">Production website</div>
+        <div class="deliver-desc">Live at siragugaltrust.org · CDN-cached · WCAG 2.2 AA · Lighthouse 95+ all categories.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 02</div>
+        <div class="deliver-title">Admin command center</div>
+        <div class="deliver-desc">Full CRUD on stories, campaigns, donations, volunteers, events. Trust runs the site without us.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 03</div>
+        <div class="deliver-title">Donor portal</div>
+        <div class="deliver-desc">Donor login · giving history · 80G re-download · monthly giving controls.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 04</div>
+        <div class="deliver-title">Source code + GitHub repo</div>
+        <div class="deliver-desc">Full ownership. MIT-style internal license. Trust can hire any future dev to extend.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 05</div>
+        <div class="deliver-title">Operations runbook</div>
+        <div class="deliver-desc">PDF + Notion. How to deploy · backup · restore · add a board member · publish a campaign.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 06</div>
+        <div class="deliver-title">Brand kit</div>
+        <div class="deliver-desc">Logo variants · Tamil + English typography · color tokens · social templates.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 07</div>
+        <div class="deliver-title">Two training sessions</div>
+        <div class="deliver-desc">90 min each · recorded · cover content publishing + donation reconciliation + receipt issue.</div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-icon">DELIVERABLE · 08</div>
+        <div class="deliver-title">3 months post-launch support</div>
+        <div class="deliver-desc">Bug fixes · minor enhancements · uptime monitoring · monthly check-in call.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= INVEST / CTA ============= -->
+<section id="invest" class="invest">
+  <div class="invest-content">
+    <div class="invest-tamil">அடுத்த அத்தியாயம்</div>
+    <h2 class="invest-title">The next <em>chapter</em><br>of Siragugal Trust.</h2>
+    <p class="invest-sub">
+      Eight years of impact. Seventy-six lives. One website that finally tells the truth about both.
+      FBT is ready to build it. The only question left is when we start.
+    </p>
+
+    <div class="invest-numbers">
+      <div>
+        <div class="invest-num">12</div>
+        <div class="invest-num-label">Weeks to ship</div>
+      </div>
+      <div>
+        <div class="invest-num">3</div>
+        <div class="invest-num-label">Phased releases</div>
+      </div>
+      <div>
+        <div class="invest-num">16+</div>
+        <div class="invest-num-label">Major features</div>
+      </div>
+      <div>
+        <div class="invest-num">100%</div>
+        <div class="invest-num-label">Source-code ownership</div>
+      </div>
+    </div>
+
+    <div class="invest-cta-row">
+      <a href="https://wa.me/918300438281?text=Siragugal%20Pitch" class="btn btn-gold">
+        Start the Conversation
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="mailto:siragugaltrust@gmail.com?subject=FBT%20Build%20Proposal" class="btn btn-cream-ghost">
+        Email the Trust
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="ornament" style="color: var(--gold); margin-top: 80px;">·</div>
+
+    <p style="font-family: var(--serif); font-style: italic; font-size: 18px; opacity: 0.7; max-width: 600px; margin: 0 auto;">
+      "Not everyone is blessed with equal opportunities."<br>
+      <span style="font-size: 13px; opacity: 0.7; font-style: normal; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase;">— Siragugal Trust mission, 2018</span>
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">FBT × Siragugal Trust</div>
+    <div class="footer-meta">
+      <span class="footer-tag">PITCH DOC v1.0</span> · Future Beyond Technology · Chennai · April 2026
+    </div>
+    <div class="footer-meta">Built with care · Engineered for trust</div>
+  </div>
+</footer>
+
+<script>
+// IntersectionObserver for reveal animations
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// counter rolling on hero stats — stagger
+document.addEventListener('DOMContentLoaded', () => {
+  const heroNums = document.querySelectorAll('.hero-stat-num');
+  heroNums.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = 'all 0.8s ease-out';
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 600 + i * 120);
+  });
+});
+</script>
+
+</body>
+</html>
